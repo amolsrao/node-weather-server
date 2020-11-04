@@ -5,6 +5,7 @@ const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
 
 const app = express();
+const port = process.env.PORT;
 
 // Define paths for express config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -95,6 +96,6 @@ app.get('*', (req, res) => {
 // Start the server. The process of starting up a
 // server is an asynchronous process, though it will
 // happen almost instantaneously.
-app.listen(3000, () => {
-  console.log('Server is up on port 3000.'); // doesn't get displayed to the client
+app.listen(port, () => {
+  console.log('Server is up on port ' + port); // doesn't get displayed to the client
 });
